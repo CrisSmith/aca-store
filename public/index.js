@@ -7,9 +7,8 @@ featuredProducts += `
     <div>
         <div>${product.name}</div>
         <img src=${product.imgUrl}>
-        <div>Rating:${product.rating}</div>
-        <div>Price:${product.price}</div>
         <button class="details">Product Details</button>
+        <button class="select">Select</button>
         <br>
         <br>
     </div>
@@ -22,6 +21,7 @@ document.getElementById("cart-btn").addEventListener('click',viewCart);
 document.getElementById("add-btn").addEventListener('click',addToCart);
 document.getElementById("cart").addEventListener('click', removeItem);
 document.getElementById("container").addEventListener('click',showDetails);
+
 let searchbox = document.getElementById("searchbox");
 let resultsbox = document.getElementById("resultsbox");
 let cart = document.getElementById("cart");
@@ -42,7 +42,7 @@ function viewCart(e){
     e.preventDefault();
     cart.style.display = 'block'
 }
-//add an item to the cart:
+//add an item to the cart from the search:
 function addToCart(e){
     e.preventDefault();
     let item = searchbox.value;
@@ -61,11 +61,16 @@ function removeItem(e){
         e.target.parentElement.parentElement.remove();
     }
 }
+
 //show product details:
 function showDetails(e){
     if(e.target.className == "details"){
         let description = document.createElement("div")
-        description.innerHTML = `<div>FULL PRODUCT DESCRIPTION: ${products[1].description}</div>`
+        description.innerHTML = `
+        <div>Full Product Description: ${products[0].description}</div>
+        <div>Catagory: ${products[0].category}</div>
+        <div>Rating:${products[0].rating}</div>
+        <div>Price:${products[0].price}</div>`;
         e.target.parentElement.appendChild(description)
     }
 }
