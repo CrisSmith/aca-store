@@ -16,13 +16,31 @@
         </form> 
         <button id="add-btn">Add to Cart</button>
         <button id="cart-btn">View Cart</button>
-        <button id="chackout-btn">Checkout</button>
+        <button id="checkout-btn">Checkout</button>
     </div>
     <div id="resultsbox" style="display: none" >Search Results:</div>
+    <div id="checkout" style="display: none">
+        <form>
+            <label>First Name:</label>
+            <input type="text">
+            <label>Last Name:</label>
+            <input type="text">
+            <label>email:</label>
+            <input type="Email">
+            <button id="order-btn" type="submit">Place Order</button>
+        </form>
+    </div>
     <ul id="cart" style="display:none">Items in Your Cart:</ul>
+    <h2>Choose Department:</h2>
+    <select id="ddlist">
+            <option value="default">--Choose--</option>
+            <option value="food">Food</option>
+            <option value="electronics">Electronics</option>
+            <option value="sporting">Sporting</option>
+     </select>
     <h2>Featured products:</h2>
     <div id="container"></div>
-     <script src="products.js"></script>     
+    <script src="products.js"></script>     
     <script src="index.js"></script>   
 </body>
 </html>
