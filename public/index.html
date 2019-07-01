@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" type="text/css" rel="stylesheet">
    
 </head>
 <body>
-     <form id="form">
-            <input id="searchbox" type="text" placeholder="Search here">
-            <button id="btn" type="submit">Click to Search</button>
-     </form>
-    <div id="resultsbox">Search Results:</div>
-    <button id="add-btn">Add to Cart</button>
-    <button id="cart-btn">View Cart</button>
-    <ul id="cart" style="display:none"></ul>
-    <button>Checkout</button>
+    <div id="navbar">
+        <form id="form">
+                <input id="searchbox" type="text" placeholder="Search products">
+                <button id="btn" type="submit">Search</button>
+        </form> 
+        <button id="add-btn">Add to Cart</button>
+        <button id="cart-btn">View Cart</button>
+        <button id="chackout-btn">Checkout</button>
+    </div>
+    <div id="resultsbox" style="display: none" >Search Results:</div>
+    <ul id="cart" style="display:none">Items in Your Cart:</ul>
     <h2>Featured products:</h2>
     <div id="container"></div>
      <script src="products.js"></script>     

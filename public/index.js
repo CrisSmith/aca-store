@@ -1,21 +1,25 @@
 
 //display the products:
-let featuredProducts = "";
-for(let i=0; i < products.length; i++){
-let product = products[i];
-featuredProducts += `
-    <div>
-        <div>${product.name}</div>
-        <img src=${product.imgUrl}>
-        <button class="details">Product Details</button>
-        <button class="select">Select</button>
-        <br>
-        <br>
-    </div>
-    `
-};
-//listening for events:
-document.getElementById("container").innerHTML = featuredProducts;
+function Products(products){
+    let featuredProducts = "";
+    for(let i=0; i < products.length; i++){
+    let product = products[i];
+    featuredProducts += `
+        <div>
+            <div>${product.name}</div>
+            <img src=${product.imgUrl}>
+            <button class="details">Product Details</button>
+            <button class="select">Select</button>
+            <br>
+            <br>
+        </div>
+        `
+        };
+        document.getElementById("container").innerHTML = featuredProducts;
+}
+Products(products);
+
+
 document.getElementById("btn").addEventListener('click',searchProducts);
 document.getElementById("cart-btn").addEventListener('click',viewCart);
 document.getElementById("add-btn").addEventListener('click',addToCart);
@@ -28,8 +32,14 @@ let cart = document.getElementById("cart");
 let addBtn=document.getElementById("add-btn");
 
 //search the products:
+//CLASS NOTES: THINK ABOUT USING FILTER (products.filter)
+//let filtedProducts = products.filter(p=> p.name===serachbox.value)...; then  Products(filteredProducts)
+//this will return an array with the filtered products
+//or use the 'includes' method:   p.name.indexOf includes()
+
 function searchProducts(e){
     e.preventDefault();
+    resultsbox.style.display = 'block';
     for(let i=0; i < products.length; i++){
     if (searchbox.value === products[i].name) {
         resultsbox.innerHTML = 

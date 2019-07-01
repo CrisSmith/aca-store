@@ -1,0 +1,13 @@
+body {
+    background:black;
+    color:white;
+}
+
+#navbar {
+    display: flex;
+    margin-bottom:10px;
+}
+
+button {
+    margin: 5px;
+}
