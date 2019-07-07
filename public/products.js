@@ -1,6 +1,6 @@
 const products = [{
   "id": 1,
-  "name": "Body Luxuries Sweet Lavender Hand Sanitizer",
+  "name": "Body Luxuries Hand Sanitizer",
   "description": "Makes your hands clean",
   "reviews": 46,
   "rating": 2,
@@ -40,7 +40,7 @@ const products = [{
   }]
 }, {
   "id": 2,
-  "name": "Topiramate",
+  "name": "Topiramate Ultra",
   "description": "A wonderful medicine that makes everything all better",
   "reviews": 2,
   "rating": 2,
@@ -219,4 +219,19 @@ const products = [{
   }
 ]
 }];
+//CLASS NOTES:
+//removing $ signed converting string to numbers; pushing to new array:
+//let totalcart=[]
+//products.forEach((prod)=>{
+  //totalcart.push(prod.price = Number(prod.price.replace(/[^0-9.-]+/g,"")))
+//})
+//console.log(totalcart)
+//reduce to get sum of total price:
+//let totalPrice = totalcart.reduce((a,b) => a + b, 0)
+//console.log(totalPrice)
 
+//use toFixed method to get rounded down intergers:(also add a $ sign)
+//let bestNumber= "$"+totalPrice.toFixed(2)
+//console.log(bestNumber)
+
+//--------------------------------------
