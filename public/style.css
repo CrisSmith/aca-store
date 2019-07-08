@@ -4,8 +4,37 @@ body {
 #navbar {
     display: flex;
     margin-bottom:10px;
+    border-bottom:2px solid black;
 }
 
 button {
-    margin: 5px;
+    margin: 4px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 2fr 2fr auto;
+  flex-wrap: wrap;
+ 
+}
+
+#ft-product {
+    border: 1px solid grey;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding:8px;
+    
+}
+
+#cart {
+    width:300px;
+    border: 1px solid grey;
+    margin:10px;
+}
+
+#checkout {
+    border: 1px solid grey;
+    margin:10px;
+    padding:8px;
 }

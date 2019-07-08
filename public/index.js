@@ -20,15 +20,14 @@ function Products(products){
     for(let i=0; i < products.length; i++){
         let product = products[i];
         featuredProducts += `
-        <div>
-            <div>${product.name}</div>
+        <div id="ft-product">
             <img src=${product.imgUrl}>
+            <div>${product.name}</div>
             <div>${product.price}</div>
             <div>Rating: ${product.rating}</div>
             <div>Reviews: ${product.reviews.length}</div>
             <button onclick="addAnItem(${product.id})">Add to cart</button>
             <button onclick="ProductDetail(${product.id})">View Details</button>
-            <br>
             <br>
         </div>`
         };
@@ -38,6 +37,8 @@ Products(products);
 
 //Show product details:
 function ProductDetail(id){
+    document.getElementById("container").style.display = "none";
+    document.getElementById("featured-banner").style.display = "none";
     let prod = products.find((p)=>{
         return p.id === id;
     });
@@ -67,13 +68,6 @@ function ProductDetail(id){
         </select>`;
 }
 //Search the products:
-//note: when you search, the returned item should have all the details (a complete unit);
-//needs to be to lowercase
-//CLASS NOTES: THINK ABOUT USING FILTER (products.filter)
-//let filtedProducts = products.filter(p=> p.name===serachbox.value)...; then Products(filteredProducts)
-//this will return an array with the filtered products
-//or use the 'includes' method:   p.name.indexOf includes()
-
 function searchProducts(e){
     e.preventDefault();
     resultsbox.style.display = 'block';
@@ -142,8 +136,8 @@ function returnTotal(){
         intPrices.push(prod = Number(prod.replace(/[^0-9.-]+/g,"")));
     });
     let totalPrice = intPrices.reduce((a,b) => a + b, 0);
-    let bestNumber= "$"+totalPrice.toFixed(2);
-    document.getElementById("totalPrice").innerHTML= "Order Total: " + bestNumber
+    let finalNumber= "$"+totalPrice.toFixed(2);
+    document.getElementById("totalPrice").innerHTML= "Order Total: " + finalNumber
 }
 
 //Show checkout form:

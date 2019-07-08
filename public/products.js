@@ -126,7 +126,7 @@ const products = [{
 ]
 }, {
   "id": 6,
-  "name": "Fresh Sugar Honey Tinted Lip Treatment SPF15",
+  "name": "Fresh Sugar Honey Lip Treatment SPF15",
   "description": "Fix those chapped lips. ",
   "reviews": 79,
   "rating": 3,
