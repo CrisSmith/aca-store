@@ -39,6 +39,7 @@ Products(products);
 function ProductDetail(id){
     document.getElementById("container").style.display = "none";
     document.getElementById("featured-banner").style.display = "none";
+    document.getElementById("catagories").style.display = "none";
     let prod = products.find((p)=>{
         return p.id === id;
     });
@@ -143,7 +144,30 @@ function returnTotal(){
 //Show checkout form:
 function showCheckout(e){
     e.preventDefault();
+    document.getElementById("container").style.display = "none";
+    document.getElementById("featured-banner").style.display = "none";
+    document.getElementById("catagories").style.display = "none";
     checkout.style.display = 'block';
     returnTotal(totalcart); 
 }
+
+//Are you still there? feature:
+let userActive = false;
+document.querySelector("body").addEventListener('click',checkActivity)
+
+function checkActivity(e){
+    e.preventDefault();
+    userActive = true;
+}
+
+function alertQuestion(){
+    if(!userActive){
+       alert("Are you still there?");
+       userActive = true
+    }  
+    else userActive = false
+}
+let interval = setInterval(alertQuestion,60000)
+
+
 
