@@ -12,8 +12,6 @@ let home= null;
 let main = null;
 let checkoutBtn= null
 let signUpbtn = null
-let searchbox = null
-let resultsbox = null
 let checkoutForm = null
   
 window.onload=()=>{
@@ -29,11 +27,20 @@ window.onload=()=>{
     checkoutForm = document.getElementById("checkout")
     listProducts(products);
 }
+//Sign up and POST to Users:
 function signUp(){
     let email = emailInput.value;
     let password = passwordInput.value;
     home.style.display ="block";
     signupForm.style.display = "none";
+    let options ={
+        method:"POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify({email:email, password:password})
+    };
+    fetch("https://acastore.herokuapp.com/users", options)
+    .then(res=>res.json())
+    .then(newUser=>console.log(newUser))
 }
 //Make your addedProduct equal to your search input value:
 function handleChange(e){
@@ -59,14 +66,29 @@ function productDetail(id){
         <div>${prod.reviews[0].description}</div>
         </div>`;
 }
-//List Products:
+//GET request to /products:
+function getProducts() {
+    fetch("https://acastore.herokuapp.com/products")
+    .then(res=> res.json())
+    .then((products)=> {
+        let outputList = '<h2>Products</h2>';
+        products.map((p)=> {
+            outputList +=  `
+            <hr><div onclick="productDetail(${p.id})">
+                <div>${p.name}</div>
+            </div>`
+        })
+        main.innerHTML = outputList
+    });
+}
+
+//List Products(no GET request):
 function listProducts(products){
     let prodDivs = products.map(p=>{
       return `
       <hr><div onclick="productDetail(${p.id})">
         <div>${p.name}</div>
       </div>`
-      
     });
     main.innerHTML = prodDivs.join("");
   }
