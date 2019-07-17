@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cris's ACA Store-modified</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" type="text/css" rel="stylesheet">  
+</head>
+<body>
+    <div id="home" style="display:none">
+        <h2>-ACA STORE-</h2>
+        <input id="searchbox" placeholder="Search Products" onChange="handleChange(this)">
+        <button id="search-btn" type="submit" onClick="search()">Search</button>
+        <button id="cart-btn" onClick="viewCart()">View Cart</button>
+        <button id="home-btn" onClick="showHome()">Home</button>
+        <div id="main"></div>
+        <button id="add-btn" style="display:none" onClick="addToCart(state.addedProduct)">Add to Cart</button> 
+    </div>
+    <form id="sign-up-form">
+        <h2>Welcome to the ACA-Store</h2>
+        <p>You must sign-up to use our site:</p>
+        <input id="email" placeholder="Email">
+        <input id="password" placeholder="Password">
+        <button id="sign-up-btn" type="submit" onClick="signUp()">Sign Up</button>
+    </form>
+    <script src="products.js"></script>     
+    <script src="index2.js"></script>   
+</body>
+</html>
