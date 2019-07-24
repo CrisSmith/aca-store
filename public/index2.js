@@ -150,7 +150,7 @@ function alertQuestion(){
     }  
     else userActive = false
 }
-let interval = setInterval(alertQuestion,60000)
+let interval = setInterval(alertQuestion,60000) 
 
 
 
