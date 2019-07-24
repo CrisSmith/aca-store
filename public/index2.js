@@ -27,7 +27,7 @@ window.onload=()=>{
     checkoutForm = document.getElementById("checkout")
     listProducts(products);
 }
-//Sign up and POST to Users:
+//Sign up and POST to /Users via fetch:
 function signUp(){
     let email = emailInput.value;
     let password = passwordInput.value;
