@@ -68,7 +68,7 @@ function productDetail(id){
 }
 //GET request to /products:
 function getProducts() {
-    fetch("https://acastore.herokuapp.com/products")
+    fetch("/products")
     .then(res=> res.json())
     .then((products)=> {
         let outputList = '<h2>Products</h2>';
