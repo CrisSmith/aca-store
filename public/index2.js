@@ -38,7 +38,7 @@ function signUp(){
         headers:{"Content-Type": "application/json"},
         body: JSON.stringify({email:email, password:password})
     };
-    fetch("https://acastore.herokuapp.com/users", options)
+    fetch("/users", options)
     .then(res=>res.json())
     .then(newUser=>console.log(newUser))
 }
